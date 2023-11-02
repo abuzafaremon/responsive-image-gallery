@@ -1,11 +1,9 @@
 import "./App.css";
 
 function App() {
-  return (
-    <>
-      <p>Responsive Image Gallery</p>
-    </>
-  );
+  // const url = URL.createObjectURL(file);
+  // console.log(url);
+  return <>HELLO</>;
 }
 
 export default App;
