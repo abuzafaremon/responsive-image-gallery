@@ -1,9 +1,12 @@
 import "./App.css";
+import Gallery from "./components/Gallery";
 
 function App() {
-  // const url = URL.createObjectURL(file);
-  // console.log(url);
-  return <>HELLO</>;
+  return (
+    <>
+      <Gallery />
+    </>
+  );
 }
 
 export default App;
