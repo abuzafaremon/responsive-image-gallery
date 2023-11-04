@@ -1,4 +1,8 @@
-const Header = ({ selectThumbnails, setSelectThumbnails }) => {
+const Header = ({
+  selectThumbnails,
+  setSelectThumbnails,
+  handleDeleteSelected,
+}) => {
   return (
     <nav className="py-4 px-3 md:px-6">
       <div className="flex flex-row justify-between items-center">
@@ -22,7 +26,12 @@ const Header = ({ selectThumbnails, setSelectThumbnails }) => {
           )}
         </h1>
         {selectThumbnails.length > 0 && (
-          <button className="text-red-500 font-medium">Delete files</button>
+          <button
+            onClick={handleDeleteSelected}
+            className="text-red-500 font-medium"
+          >
+            Delete files
+          </button>
         )}
       </div>
     </nav>

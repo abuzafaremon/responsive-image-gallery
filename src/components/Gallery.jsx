@@ -27,12 +27,21 @@ const Gallery = () => {
     }
   };
 
+  const handleDeleteSelected = () => {
+    const updatedImages = galleryImages.filter(
+      (image) => !selectThumbnails.some((selected) => selected.id === image.id)
+    );
+    setGalleryImages(updatedImages);
+    setSelectThumbnails([]);
+  };
+
   return (
     <main className="bg-white rounded-md">
       <div className="container">
         <Header
           selectThumbnails={selectThumbnails}
           setSelectThumbnails={setSelectThumbnails}
+          handleDeleteSelected={handleDeleteSelected}
         />
         <hr />
         <section className="h-full w-full p-6">
