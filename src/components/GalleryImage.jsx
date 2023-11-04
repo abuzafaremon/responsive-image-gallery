@@ -7,7 +7,7 @@ const GalleryImage = ({
   return (
     <div
       className={
-        "relative group cursor-move border-2 rounded-md before:content-[''] before:absolute before:h-full before:w-full before:rounded-md before:transition-colors before:cursor-move" +
+        "relative group first:row-span-2 first:col-span-2 cursor-move border-2 rounded-md before:content-[''] before:absolute before:h-full before:w-full before:rounded-md before:transition-colors before:cursor-move" +
         (selectThumbnails.find((photo) => photo.id === image.id)
           ? " opacity-100 before:bg-white/50"
           : " hover:before:bg-black/50")
