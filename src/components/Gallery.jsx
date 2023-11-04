@@ -6,7 +6,15 @@ import GalleryImage from "./GalleryImage";
 const Gallery = () => {
   const [galleryImages, setGalleryImages] = useState(images);
   const [selectThumbnails, setSelectThumbnails] = useState([]);
-  console.log(selectThumbnails);
+  const [dragging, setDragging] = useState(false);
+  const [draggedImage, setDraggedImage] = useState(null);
+  const [draggedIndex, setDraggedIndex] = useState(null);
+
+  const handleDragStart = (image) => {
+    setDragging(true);
+    setDraggedImage(image);
+  };
+
   return (
     <main className="bg-white rounded-md">
       <div className="container">
@@ -21,6 +29,9 @@ const Gallery = () => {
                 index={index}
                 selectThumbnails={selectThumbnails}
                 setSelectThumbnails={setSelectThumbnails}
+                handleDragStart={handleDragStart}
+                dragging={dragging}
+                draggedIndex={draggedIndex}
               />
             ))}
           </div>

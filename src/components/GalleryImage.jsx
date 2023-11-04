@@ -12,6 +12,7 @@ const GalleryImage = ({
           ? " opacity-100 before:bg-white/50"
           : " hover:before:bg-black/50")
       }
+      draggable
     >
       <img className="rounded-md" src={image.thumbnail} alt={"image" + index} />
       <input
