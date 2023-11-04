@@ -5,7 +5,14 @@ const GalleryImage = ({
   setSelectThumbnails,
 }) => {
   return (
-    <div className="relative cursor-move border-2 rounded-md">
+    <div
+      className={
+        "relative group cursor-move border-2 rounded-md before:content-[''] before:absolute before:h-full before:w-full before:rounded-md before:transition-colors before:cursor-move" +
+        (selectThumbnails.find((photo) => photo.id === image.id)
+          ? " opacity-100 before:bg-white/50"
+          : " hover:before:bg-black/50")
+      }
+    >
       <img className="rounded-md" src={image.thumbnail} alt={"image" + index} />
       <input
         type="checkbox"
