@@ -6,13 +6,25 @@ import GalleryImage from "./GalleryImage";
 const Gallery = () => {
   const [galleryImages, setGalleryImages] = useState(images);
   const [selectThumbnails, setSelectThumbnails] = useState([]);
-  const [dragging, setDragging] = useState(false);
   const [draggedImage, setDraggedImage] = useState(null);
-  const [draggedIndex, setDraggedIndex] = useState(null);
 
-  const handleDragStart = (image) => {
-    setDragging(true);
-    setDraggedImage(image);
+  const handleDragStart = (images) => {
+    setDraggedImage(images);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+
+  const handleDrop = (targetIndex) => {
+    if (draggedImage) {
+      const updatedImages = galleryImages.filter(
+        (image) => image.id !== draggedImage.id
+      );
+      updatedImages.splice(targetIndex, 0, draggedImage);
+      setGalleryImages(updatedImages);
+      setDraggedImage(null);
+    }
   };
 
   return (
@@ -30,8 +42,8 @@ const Gallery = () => {
                 selectThumbnails={selectThumbnails}
                 setSelectThumbnails={setSelectThumbnails}
                 handleDragStart={handleDragStart}
-                dragging={dragging}
-                draggedIndex={draggedIndex}
+                handleDragOver={handleDragOver}
+                handleDrop={handleDrop}
               />
             ))}
           </div>

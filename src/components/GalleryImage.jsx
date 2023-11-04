@@ -3,6 +3,9 @@ const GalleryImage = ({
   index,
   selectThumbnails,
   setSelectThumbnails,
+  handleDragStart,
+  handleDragOver,
+  handleDrop,
 }) => {
   return (
     <div
@@ -13,6 +16,9 @@ const GalleryImage = ({
           : " hover:before:bg-black/50")
       }
       draggable
+      onDragStart={() => handleDragStart(image)}
+      onDragOver={handleDragOver}
+      onDrop={() => handleDrop(index)}
     >
       <img className="rounded-md" src={image.thumbnail} alt={"image" + index} />
       <input
