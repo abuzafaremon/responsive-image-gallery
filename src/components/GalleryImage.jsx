@@ -39,6 +39,9 @@ const GalleryImage = ({
             ? "opacity-100"
             : "opacity-0")
         }
+        checked={
+          selectThumbnails.find((photo) => photo.id === image.id) ? true : false
+        }
       />
     </div>
   );

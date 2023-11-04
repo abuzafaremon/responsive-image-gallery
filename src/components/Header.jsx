@@ -1,4 +1,4 @@
-const Header = ({ selectThumbnails }) => {
+const Header = ({ selectThumbnails, setSelectThumbnails }) => {
   return (
     <nav className="py-4 px-3 md:px-6">
       <div className="flex flex-row justify-between items-center">
@@ -11,7 +11,8 @@ const Header = ({ selectThumbnails }) => {
                 type="checkbox"
                 name="select"
                 id="select"
-                checked={selectThumbnails.length > 0}
+                checked
+                onChange={() => setSelectThumbnails([])}
                 className="h-5 w-5 accent-blue-500 cursor-pointer"
               />
               <span className="ml-2">
@@ -20,7 +21,9 @@ const Header = ({ selectThumbnails }) => {
             </>
           )}
         </h1>
-        <button className="text-red-500 font-medium">Delete files</button>
+        {selectThumbnails.length > 0 && (
+          <button className="text-red-500 font-medium">Delete files</button>
+        )}
       </div>
     </nav>
   );
