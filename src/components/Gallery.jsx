@@ -12,14 +12,19 @@ const Gallery = () => {
   const [dragOverIndex, setDragOverIndex] = useState(null);
 
   const handleDragStart = (images) => {
+    setDragging(true);
     setDraggedImage(images);
   };
 
   const handleDragOver = (e) => {
     e.preventDefault();
+    e?.target?.children[0]?.alt &&
+      setDragOverIndex(e?.target?.children[0]?.alt);
   };
 
   const handleDrop = (targetIndex) => {
+    setDragging(false);
+
     if (draggedImage) {
       const updatedImages = galleryImages.filter(
         (image) => image.id !== draggedImage.id

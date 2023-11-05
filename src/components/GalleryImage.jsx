@@ -24,7 +24,7 @@ const GalleryImage = ({
       onDragOver={handleDragOver}
       onDrop={() => handleDrop(index)}
     >
-      <img className="rounded-md" src={image.thumbnail} alt={"image" + index} />
+      <img className="rounded-md" src={image.thumbnail} alt={image.id} />
       <input
         type="checkbox"
         name={image.id}
