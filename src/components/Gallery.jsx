@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./Header";
 import images from "../data/imagesData";
 import GalleryImage from "./GalleryImage";
+import UploadImage from "./UploadImage";
 
 const Gallery = () => {
   const [galleryImages, setGalleryImages] = useState(images);
@@ -35,6 +36,19 @@ const Gallery = () => {
     setSelectThumbnails([]);
   };
 
+  const handleFileChange = (e) => {
+    const uploadedFiles = e.target.files;
+
+    const newImages = Array.from(uploadedFiles).map((file, index) => {
+      const id = galleryImages.length + index + 1;
+      const thumbnail = URL.createObjectURL(file);
+
+      return { id, thumbnail };
+    });
+
+    setGalleryImages([...galleryImages, ...newImages]);
+  };
+
   return (
     <main className="bg-white rounded-md">
       <div className="container">
@@ -58,6 +72,7 @@ const Gallery = () => {
                 handleDrop={handleDrop}
               />
             ))}
+            <UploadImage handleFileChange={handleFileChange} />
           </div>
         </section>
       </div>
