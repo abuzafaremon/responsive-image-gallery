@@ -1,3 +1,5 @@
+import DragAndDropOverlay from "./DragAndDropOverlay";
+
 const GalleryImage = ({
   image,
   index,
@@ -6,6 +8,8 @@ const GalleryImage = ({
   handleDragStart,
   handleDragOver,
   handleDrop,
+  dragging,
+  dragOverIndex,
 }) => {
   return (
     <div
@@ -42,6 +46,11 @@ const GalleryImage = ({
         checked={
           selectThumbnails.find((photo) => photo.id === image.id) ? true : false
         }
+      />
+      <DragAndDropOverlay
+        dragging={dragging}
+        dragOverIndex={dragOverIndex}
+        image={image}
       />
     </div>
   );

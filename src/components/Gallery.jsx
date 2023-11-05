@@ -8,6 +8,8 @@ const Gallery = () => {
   const [galleryImages, setGalleryImages] = useState(images);
   const [selectThumbnails, setSelectThumbnails] = useState([]);
   const [draggedImage, setDraggedImage] = useState(null);
+  const [dragging, setDragging] = useState(false);
+  const [dragOverIndex, setDragOverIndex] = useState(null);
 
   const handleDragStart = (images) => {
     setDraggedImage(images);
@@ -70,6 +72,8 @@ const Gallery = () => {
                 handleDragStart={handleDragStart}
                 handleDragOver={handleDragOver}
                 handleDrop={handleDrop}
+                dragging={dragging}
+                dragOverIndex={dragOverIndex}
               />
             ))}
             <UploadImage handleFileChange={handleFileChange} />
