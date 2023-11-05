@@ -1,4 +1,5 @@
 const Header = ({
+  // destructure passed props from gallery component
   selectThumbnails,
   setSelectThumbnails,
   handleDeleteSelected,
@@ -13,8 +14,6 @@ const Header = ({
             <>
               <input
                 type="checkbox"
-                name="select"
-                id="select"
                 checked
                 onChange={() => setSelectThumbnails([])}
                 className="h-5 w-5 accent-blue-500 cursor-pointer"
@@ -25,6 +24,7 @@ const Header = ({
             </>
           )}
         </h1>
+        {/* delete button for delete selected image */}
         {selectThumbnails.length > 0 && (
           <button
             onClick={handleDeleteSelected}

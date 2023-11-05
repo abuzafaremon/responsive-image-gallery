@@ -52,7 +52,7 @@ const GalleryImage = ({
           selectThumbnails.find((photo) => photo.id === image.id) ? true : false
         }
       />
-      {/* select image checkbox start */}
+      {/* select image checkbox end */}
       {/* import drag and drop overlay component and pass necessary props */}
       <DragAndDropOverlay
         dragging={dragging}

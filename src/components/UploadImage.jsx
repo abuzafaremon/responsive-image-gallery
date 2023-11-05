@@ -9,6 +9,7 @@ const UploadImage = ({ handleFileChange }) => {
         onChange={handleFileChange}
       />
       <div className="h-full w-full flex flex-col justify-center items-center gap-4">
+        {/* placeholder image */}
         <img
           className="w-5 h-5"
           src="/assets/images/uploadIcon.png"
