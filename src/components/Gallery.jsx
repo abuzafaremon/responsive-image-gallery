@@ -50,16 +50,16 @@ const Gallery = () => {
   };
 
   return (
-    <main className="bg-white rounded-md">
-      <div className="container">
+    <main className="w-full md:w-3/4 lg:w-2/3 mx-auto bg-white rounded-md">
+      <div>
         <Header
           selectThumbnails={selectThumbnails}
           setSelectThumbnails={setSelectThumbnails}
           handleDeleteSelected={handleDeleteSelected}
         />
         <hr />
-        <section className="h-full w-full p-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <section className="w-full p-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {galleryImages.map((image, index) => (
               <GalleryImage
                 key={index}

@@ -14,7 +14,7 @@ const UploadImage = ({ handleFileChange }) => {
           src="/assets/images/uploadIcon.png"
           alt="placeholder"
         />
-        <span>Add Images</span>
+        <span className="min-w-max">Add Images</span>
       </div>
     </div>
   );
