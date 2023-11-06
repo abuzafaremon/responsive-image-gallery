@@ -1,6 +1,6 @@
 # Task for the `Fresher React JS Developers`
 
-> Live Link: [https://simple-image-gallery-job-task.vercel.app/](https://image-gallery-abuzafaremon.vercel.app/)
+> Live Link: [https://image-gallery-abuzafaremon.vercel.app/](https://image-gallery-abuzafaremon.vercel.app/)
 
 ## Objective:
 
@@ -20,7 +20,7 @@ Create a responsive image gallery using React JS with the following features: re
 4. **Setting Feature Image:**
    - Allow users to set a feature image by sorting.
    - Pretend the first image (from the LTR direction) as the featured image
-   - The feature image should be visually distinct from the other images.
+   - The featured image should be visually distinct from the other images.
 5. **User Experience:**
    - Ensure a smooth and responsive user experience.
    - Implement transitions or animations for a polished look and feel.
@@ -33,7 +33,3 @@ Create a responsive image gallery using React JS with the following features: re
 - Pay attention to code organization, readability, and best practices.
 - Include comments or documentation as necessary for clarity.
 - Ensure responsiveness for various screen sizes.
-
-## Note:
-
-Feel free to showcase your creativity and React JS skills in the implementation of the image gallery. We look forward to seeing your work!
